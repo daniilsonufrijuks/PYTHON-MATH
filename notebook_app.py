@@ -17,10 +17,11 @@ def func_random_gen():
     result_label.config(text=str(num))
 
 def func_random_news_gen():
-    result_label2.config(text=str(generate_random_news()))
+    result_label2.config(text=str(generate_random_news()), wraplength=400, font=("bold", 15))
 
 def equation_gen():
-    result_label4.config(text=quation_gen())
+    custom_font = ("bold", 20)
+    result_label4.config(text=quation_gen(), font=custom_font)
 
 
 # root window
@@ -53,6 +54,9 @@ notebook.add(frame2, text='RANDOM')
 notebook.add(frame3, text='EQUATION')
 notebook.add(frame4, text='NEWS')
 
+style = ttk.Style()
+style.configure('TNotebook.Tab', font=('bold', 14))
+
 
 entry = Entry(frame1, width=50)
 entry.pack(pady=10)
@@ -67,7 +71,7 @@ result_label = Label(frame2, text="")
 result_label.pack(pady=30)
 
 result_label2 = Label(frame4, text="")
-result_label2.pack(pady=10)
+result_label2.pack(pady=35)
 
 result_label3 = Label(frame1, text="")
 result_label3.pack(pady=10)
@@ -76,16 +80,16 @@ result_label4 = Label(frame3, text="")
 result_label4.pack(pady=10)
 
 
-Btn1 = Button(frame1, text="Solve", command=func_sqrt)
+Btn1 = Button(frame1, text="Solve", command=func_sqrt, font=("bold", 15))
 Btn1.pack()
 
-Btn2 = Button(frame2, text="Find", command=func_random_gen)
+Btn2 = Button(frame2, text="Find", command=func_random_gen, font=("bold", 15))
 Btn2.pack()
 
-Btn3 = Button(frame4, text="Find", command=func_random_news_gen)
+Btn3 = Button(frame4, text="Find", command=func_random_news_gen, font=("bold", 15))
 Btn3.pack()
 
-Btn4 = Button(frame3, text="Find", command=equation_gen)
+Btn4 = Button(frame3, text="Find", command=equation_gen, font=("bold", 15))
 Btn4.pack()
 
 
