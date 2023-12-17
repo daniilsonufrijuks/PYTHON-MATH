@@ -4,16 +4,19 @@ from random import *
 from math import *
 
 def func_sqrt():
-    print(sqrt(4))
+    user_input = entry.get()
+    print(sqrt(float(user_input)))
 
 def func_random_gen():
-    print(randint(0, 1000000000))
+    num = randint(0, 1000000000)
+    result_label.config(text=str(num))
 
 
 # root window
 root = Tk()
 root.geometry('600x550')
 root.title('Your Helper')
+
 
 # create a notebook
 notebook = ttk.Notebook(root)
@@ -35,12 +38,18 @@ notebook.add(frame3, text='AI HELP')
 notebook.add(frame4, text='NEWS')
 
 
+entry = Entry(frame1, width=50)
+entry.pack(pady=10)
+
+result_label = Label(frame2, text="")
+result_label.pack(pady=10)
 
 Btn1 = Button(frame1, text="Solve", command=func_sqrt)
 Btn1.pack()
 
 Btn2 = Button(frame2, text="Find", command=func_random_gen)
 Btn2.pack()
+
 
 
 
