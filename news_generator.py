@@ -4,8 +4,8 @@ import random
 fake = Faker()
 
 def generate_random_news():
-    sources = ["CNN", "BBC", "Reuters", "NY Times"]
-    categories = ["World", "Technology", "Sports", "Entertainment", "Science"]
+    sources = ["CNN", "BBC", "Reuters", "NY Times", "Delfi", "WordPress"]
+    categories = ["World", "Technology", "Sports", "Entertainment", "Science", "Games", "IT", "USA"]
 
     source = random.choice(sources)
     category = random.choice(categories)
