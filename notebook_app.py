@@ -43,6 +43,11 @@ frame2.pack(fill='both', expand=True)
 frame3.pack(fill='both', expand=True)
 frame4.pack(fill='both', expand=True)
 
+frame1.pack_propagate(False)
+frame2.pack_propagate(False)
+frame3.pack_propagate(False)
+frame4.pack_propagate(False)
+
 notebook.add(frame1, text='SQRT')
 notebook.add(frame2, text='RANDOM')
 notebook.add(frame3, text='EQUATION')
@@ -59,7 +64,7 @@ entry3 = Entry(frame2, width=20)
 entry3.pack(pady=20)
 
 result_label = Label(frame2, text="")
-result_label.pack(pady=40)
+result_label.pack(pady=30)
 
 result_label2 = Label(frame4, text="")
 result_label2.pack(pady=10)
